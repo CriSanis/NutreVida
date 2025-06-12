@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NUTREVIDA</string>
+    <string name="calcular_imc">Calcular IMC</string>
+    <string name="que_es_imc">¿Qué es el IMC?</string>
+    <string name="contador_calorias">Contador de Calorías</string>
+    <string name="total_calorias">Total Calorías</string>
+    <string name="fecha_actual">Fecha</string>
+    <string name="agregar_alimento">Agregar Alimento</string>
+    <string name="limpiar_consumo">Limpiar Consumo</string>
+    <string name="sin_consumos">No hay consumos</string>
+    <string name="sin_consumos_mensaje">Aún no has registrado consumos para hoy.\nAgrega un alimento para comenzar.</string>
+    <string name="seleccionar_alimento">Seleccionar Alimento</string>
+    <string name="nombre_alimento">Nombre del alimento</string>
+    <string name="cantidad_gramos">Cantidad (g)</string>
+    <string name="agregar_consumo">Agregar Consumo</string>
+    <string name="agregar_nuevo_alimento">Agregar Nuevo Alimento</string>
+    <string name="nombre">Nombre</string>
+    <string name="calorias_por_100g">Calorías (por 100g)</string>
+    <string name="proteinas_por_100g">Proteínas (por 100g)</string>
+    <string name="carbohidratos_por_100g">Carbohidratos (por 100g)</string>
+    <string name="grasas_por_100g">Grasas (por 100g)</string>
+    <string name="volver">Volver</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="consumo_eliminado">Consumo eliminado</string>
+    <string name="error_eliminar_consumo">Error al eliminar el consumo</string>
+    <string name="confirmar_limpiar_consumo">¿Estás seguro de que quieres eliminar todos los consumos de hoy? Esta acción no se puede deshacer.</string>
+    <string name="eliminar_todo">Eliminar todo</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="consumo_eliminado_completo">Consumos eliminados completamente</string>
+    <string name="error_campos_vacios">Por favor, completa todos los campos</string>
+    <string name="error_cantidad_invalida">La cantidad debe ser un número mayor a 0</string>
+    <string name="alimento_no_encontrado">Alimento no encontrado</string>
+    <string name="consumo_agregado">Consumo agregado correctamente</string>
+    <string name="error_agregar_consumo">Error al agregar el consumo</string>
+    <string name="error_valores_negativos">Los valores no pueden ser negativos</string>
+    <string name="error_valores_invalidos">Por favor, ingresa valores numéricos válidos</string>
+    <string name="alimento_agregado">Alimento agregado correctamente</string>
+    <string name="error_agregar_alimento">Error al agregar el alimento</string>
+    <string name="control_agua">Control de Agua</string>
+    <string name="total_agua">Total Agua</string>
+    <string name="agregar_250ml">+250 ml</string>
+    <string name="agregar_500ml">+500 ml</string>
+    <string name="limpiar_agua">Limpiar Registros</string>
+    <string name="sin_registros_agua">No hay registros</string>
+    <string name="sin_registros_agua_mensaje">Aún no has registrado consumo de agua para hoy.\nAgrega agua para comenzar.</string>
+    <string name="agua_agregada">Agua agregada correctamente</string>
+    <string name="error_agregar_agua">Error al agregar el registro de agua</string>
+    <string name="agua_eliminada">Registro eliminado</string>
+    <string name="error_eliminar_agua">Error al eliminar el registro</string>
+    <string name="confirmar_limpiar_agua">¿Estás seguro de que quieres eliminar todos los registros de agua de hoy? Esta acción no se puede deshacer.</string>
+    <string name="agua_eliminada_completa">Registros eliminados completamente</string>
+    <!-- FASE 8: Ejercicios y Rutinas -->
+    <string name="ejercicios_y_rutinas">Ejercicios y Rutinas</string>
+    <string name="nombre_ejercicio">Nombre del Ejercicio</string>
+    <string name="duracion_minutos">Duración (minutos)</string>
+    <string name="calorias_quemadas">Calorías Quemadas</string>
+    <string name="agregar_ejercicio">Agregar Ejercicio</string>
+    <string name="total_ejercicios">Total Ejercicios</string>
+    <string name="total_calorias_quemadas">Total Calorías Quemadas</string>
+    <string name="sin_ejercicios">No hay ejercicios</string>
+    <string name="sin_ejercicios_mensaje">Aún no has registrado ejercicios.\nAgrega uno para comenzar.</string>
+    <string name="limpiar_historial_ejercicios">Limpiar Historial</string>
+    <string name="confirmar_limpiar_ejercicios">¿Estás seguro de que quieres eliminar todo el historial de ejercicios? Esta acción no se puede deshacer.</string>
+
+    <string name="resumen_salud">Resumen de Salud</string>
+
+</resources>

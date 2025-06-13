@@ -14,8 +14,7 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-
-        buildConfigField("String", "apiKey", "\"${project.properties["apiKey"]}\"")
+        buildConfigField("String", "GEMINI_API_KEY", "\"AIzaSyA7S1-mq1zTQ_cBntRlKaEWKypDNnza380\"")
     }
 
     buildFeatures {
@@ -48,6 +47,7 @@ dependencies {
     implementation(libs.gson)
     implementation(libs.generativeai)
     implementation(libs.guava.android)
+    implementation("org.commonmark:commonmark:0.22.0")
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

@@ -24,7 +24,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     // Información de la base de datos
     private static final String DATABASE_NAME = "nutrevida.db";
-    private static final int DATABASE_VERSION = 3;
+    private static final int DATABASE_VERSION = 5;
 
     // Columnas comunes
     private static final String COLUMN_ID = "id";
@@ -82,6 +82,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + COLUMN_FECHA + " TEXT NOT NULL,"
             + COLUMN_HORA + " TEXT NOT NULL"
             + ")";
+    // Tabla de rutinas
+    private static final String TABLE_RUTINAS = "rutinas";
+    private static final String COLUMN_RUTINA_ID = "rutina_id";
+    private static final String COLUMN_RUTINA_FECHA = "rutina_fecha";
+    private static final String COLUMN_TIPO = "tipo";
+    private static final String COLUMN_DESCRIPCION = "descripcion";
+
+    private static final String CREATE_TABLE_RUTINAS = "CREATE TABLE " + TABLE_RUTINAS + " (" +
+            COLUMN_RUTINA_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            COLUMN_RUTINA_FECHA + " TEXT, " +
+            COLUMN_TIPO + " TEXT, " +
+            COLUMN_DESCRIPCION + " TEXT);";
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -94,16 +106,66 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(CREATE_TABLE_CONSUMO_DIARIO);
         db.execSQL(CREATE_TABLE_AGUA);
         db.execSQL(CREATE_TABLE_EJERCICIOS);
+        db.execSQL(CREATE_TABLE_RUTINAS);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_IMC);
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_ALIMENTOS);
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_CONSUMO_DIARIO);
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_AGUA);
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_EJERCICIOS);
-        onCreate(db);
+        if (oldVersion < 6) {
+            db.execSQL(CREATE_TABLE_RUTINAS);
+        } else {
+            db.execSQL("DROP TABLE IF EXISTS " + TABLE_IMC);
+            db.execSQL("DROP TABLE IF EXISTS " + TABLE_ALIMENTOS);
+            db.execSQL("DROP TABLE IF EXISTS " + TABLE_CONSUMO_DIARIO);
+            db.execSQL("DROP TABLE IF EXISTS " + TABLE_AGUA);
+            db.execSQL("DROP TABLE IF EXISTS " + TABLE_EJERCICIOS);
+            db.execSQL("DROP TABLE IF EXISTS " + TABLE_RUTINAS);
+            onCreate(db);
+        }
+    }
+
+    public void addRutina(String fecha, String tipo, String descripcion) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_RUTINA_FECHA, fecha);
+        values.put(COLUMN_TIPO, tipo);
+        values.put(COLUMN_DESCRIPCION, descripcion);
+        db.insert(TABLE_RUTINAS, null, values);
+        db.close();
+    }
+
+    public List<Rutina> getRutinasByDate(String fecha) {
+        List<Rutina> rutinas = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = null;
+        try {
+            cursor = db.query(TABLE_RUTINAS,
+                    new String[]{COLUMN_RUTINA_ID, COLUMN_RUTINA_FECHA, COLUMN_TIPO, COLUMN_DESCRIPCION},
+                    COLUMN_RUTINA_FECHA + " = ?",
+                    new String[]{fecha},
+                    null, null, null);
+
+            if (cursor.moveToFirst()) {
+                do {
+                    Rutina rutina = new Rutina(
+                            cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_RUTINA_ID)),
+                            cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_RUTINA_FECHA)),
+                            cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_TIPO)),
+                            cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_DESCRIPCION))
+                    );
+                    rutinas.add(rutina);
+                } while (cursor.moveToNext());
+            }
+        } catch (Exception e) {
+            // Log para depuración
+            android.util.Log.e("DatabaseHelper", "Error en getRutinasByDate: " + e.toString());
+        } finally {
+            if (cursor != null) {
+                cursor.close();
+            }
+            db.close();
+        }
+        return rutinas;
     }
 
     // Tabla Ejercicios

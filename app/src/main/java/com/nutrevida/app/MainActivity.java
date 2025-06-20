@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnResumen.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, ResumenActivity.class)));
 
-        btnRutinas.setOnClickListener(v -> btnRutinas.setEnabled(false)); // Deshabilitado
+        btnRutinas.setOnClickListener(v -> startActivity(new Intent(this, RutinasActivity.class)));
 
         btnConfiguracion.setOnClickListener(v -> btnConfiguracion.setEnabled(false)); // Deshabilitado
 

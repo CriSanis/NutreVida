@@ -44,7 +44,6 @@
                 android:textSize="14sp"
                 android:textColor="@color/white"
                 android:alpha="0.9" />
-
         </LinearLayout>
 
         <!-- Tarjeta principal con opciones -->
@@ -131,7 +130,6 @@
                         android:textStyle="bold"
                         android:paddingHorizontal="8dp"
                         android:elevation="4dp" />
-
                 </LinearLayout>
 
                 <!-- Sección: Nutrición -->
@@ -221,19 +219,17 @@
                         android:layout_weight="1"
                         android:layout_marginStart="8dp"
                         android:background="@drawable/button_rounded"
-                        android:backgroundTint="#9C27B0"
+                        android:backgroundTint="@color/rutina_color"
                         android:text="📅 Rutinas"
                         android:textColor="@color/white"
                         android:textSize="12sp"
                         android:textStyle="bold"
                         android:paddingHorizontal="8dp"
                         android:elevation="4dp"
-                        android:alpha="0.6"
-                        android:enabled="false" />
-
+                        android:enabled="true" />
                 </LinearLayout>
 
-                <!-- Sección: Asistente de Salud -->
+                <!-- Sección: Asistente IA -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -250,7 +246,7 @@
                     android:layout_marginBottom="12dp"
                     android:background="@drawable/button_rounded"
                     android:backgroundTint="@color/primary_color"
-                    android:text="🌈 Asistente IA"
+                    android:text="🤖 Consultar IA"
                     android:textColor="@color/white"
                     android:textSize="14sp"
                     android:textStyle="bold"
@@ -281,7 +277,6 @@
                     android:elevation="4dp"
                     android:alpha="0.6"
                     android:enabled="false" />
-
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -296,6 +291,5 @@
             android:textSize="12sp"
             android:textColor="@color/white"
             android:alpha="0.7" />
-
     </LinearLayout>
 </ScrollView>

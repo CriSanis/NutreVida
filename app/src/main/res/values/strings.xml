@@ -64,5 +64,5 @@
     <string name="confirmar_limpiar_ejercicios">¿Estás seguro de que quieres eliminar todo el historial de ejercicios? Esta acción no se puede deshacer.</string>
 
     <string name="resumen_salud">Resumen de Salud</string>
-
+        <string name="rutinas">Rutinas</string>
 </resources>

@@ -27,4 +27,4 @@ generativeai = { module = "com.google.ai.client.generativeai:generativeai", vers
 guava-android = { module = "com.google.guava:guava", version.ref = "guavaAndroid" }
 
 [plugins]
-android-application = { id = "com.android.application", version = "8.5.2" }
+android-application = { id = "com.android.application", version = "8.10.1" }

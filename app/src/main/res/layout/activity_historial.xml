@@ -4,115 +4,145 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/background_light">
+    android:background="@drawable/gradient_background"
+    android:animateLayoutChanges="true">
 
-    <!-- Header con botón volver y título -->
-    <LinearLayout
+    <!-- Header Mejorado -->
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="16dp"
-        android:gravity="center_vertical"
-        android:background="@color/primary_color">
+        app:cardCornerRadius="24dp"
+        app:cardElevation="12dp"
+        android:backgroundTint="@color/card_background_light"
+        android:layout_margin="20dp"
+        app:cardUseCompatPadding="true"
+        >
 
-        <ImageButton
-            android:id="@+id/btnVolver"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@drawable/button_rounded"
-            android:src="@android:drawable/ic_menu_revert"
-            android:contentDescription="Volver"
-            android:backgroundTint="@color/white"
-            android:layout_marginEnd="16dp" />
-
-        <TextView
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Historial de IMC"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="@color/white"
-            android:gravity="center" />
+            android:orientation="horizontal"
+            android:padding="20dp"
+            android:gravity="center_vertical"
+            android:background="@drawable/header_gradient">
 
-        <ImageButton
-            android:id="@+id/btnLimpiarHistorial"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@drawable/button_rounded"
-            android:src="@android:drawable/ic_menu_delete"
-            android:contentDescription="Limpiar historial"
-            android:backgroundTint="@color/white"
-            android:layout_marginStart="16dp" />
+            <ImageButton
+                android:id="@+id/btnVolver"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/button_rounded"
+                android:src="@android:drawable/ic_menu_revert"
+                android:contentDescription="Volver"
+                android:backgroundTint="@color/white"
+                android:layout_marginEnd="16dp"
+                android:alpha="0.9" />
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="📈 Historial de IMC"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:letterSpacing="0.02" />
 
-    <!-- Estadísticas -->
-    <LinearLayout
+            <ImageButton
+                android:id="@+id/btnLimpiarHistorial"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/button_rounded"
+                android:src="@android:drawable/ic_menu_delete"
+                android:contentDescription="Limpiar historial"
+                android:backgroundTint="@color/white"
+                android:layout_marginStart="16dp"
+                android:alpha="0.9" />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Estadísticas Mejoradas -->
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="16dp"
-        android:background="@color/white"
-        android:layout_marginBottom="8dp">
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        android:backgroundTint="@color/white"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="20dp"
+        >
 
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:orientation="horizontal"
+            android:padding="24dp">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Total Registros"
-                android:textSize="12sp"
-                android:textColor="@color/text_secondary" />
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
 
-            <TextView
-                android:id="@+id/tvTotalRegistros"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📊 Total Registros"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_secondary"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.01" />
+
+                <TextView
+                    android:id="@+id/tvTotalRegistros"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary_color"
+                    android:letterSpacing="0.02" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="50dp"
+                android:background="@color/border_gray"
+                android:layout_marginHorizontal="20dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="0"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:textColor="@color/primary_color" />
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🎯 Último IMC"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_secondary"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.01" />
+
+                <TextView
+                    android:id="@+id/tvUltimoIMC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="--"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/success_color"
+                    android:letterSpacing="0.02" />
+
+            </LinearLayout>
 
         </LinearLayout>
-
-        <View
-            android:layout_width="1dp"
-            android:layout_height="40dp"
-            android:background="@color/text_secondary"
-            android:layout_marginHorizontal="16dp" />
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Último IMC"
-                android:textSize="12sp"
-                android:textColor="@color/text_secondary" />
-
-            <TextView
-                android:id="@+id/tvUltimoIMC"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="--"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:textColor="@color/success_color" />
-
-        </LinearLayout>
-
-    </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
     <!-- RecyclerView para mostrar el historial -->
     <androidx.recyclerview.widget.RecyclerView
@@ -120,45 +150,62 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:padding="16dp"
-        android:clipToPadding="false" />
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="8dp"
+        android:clipToPadding="false"
+        android:scrollbars="vertical"
+        android:fadeScrollbars="false"
+        android:scrollbarStyle="outsideOverlay" />
 
-    <!-- Layout cuando no hay registros -->
-    <LinearLayout
+    <!-- Layout cuando no hay registros mejorado -->
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/layoutSinRegistros"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:padding="32dp"
-        android:visibility="gone">
+        android:layout_margin="20dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        android:backgroundTint="@color/white"
+        android:visibility="gone"
+        >
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="📊"
-            android:textSize="64sp"
-            android:layout_marginBottom="16dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="No hay registros"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="@color/text_primary"
-            android:layout_marginBottom="8dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Aún no has calculado tu IMC.\nComienza ahora para ver tu historial aquí."
-            android:textSize="14sp"
-            android:textColor="@color/text_secondary"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
             android:gravity="center"
-            android:lineSpacingExtra="4dp" />
+            android:padding="40dp">
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📊"
+                android:textSize="80sp"
+                android:layout_marginBottom="24dp"
+                android:alpha="0.8" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No hay registros"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="16dp"
+                android:letterSpacing="0.02" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Aún no has calculado tu IMC.\nComienza ahora para ver tu historial aquí."
+                android:textSize="16sp"
+                android:textColor="@color/text_secondary"
+                android:gravity="center"
+                android:lineSpacingExtra="6dp"
+                android:letterSpacing="0.01" />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
 </LinearLayout>

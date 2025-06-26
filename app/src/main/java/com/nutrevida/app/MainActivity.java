@@ -3,46 +3,66 @@ package com.nutrevida.app;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+import com.google.android.material.card.MaterialCardView;
 
 public class MainActivity extends AppCompatActivity {
-    private Button btnIMC, btnContadorCalorias, btnControlAgua, btnHistorial, btnEjercicios, btnResumen, btnRutinas, btnConfiguracion, btnAIHealth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Inicializar botones
-        btnIMC = findViewById(R.id.btnCalculadoraIMC);
-        btnContadorCalorias = findViewById(R.id.btnContadorCalorias);
-        btnControlAgua = findViewById(R.id.btnControlAgua);
-        btnHistorial = findViewById(R.id.btnHistorialIMC);
-        btnEjercicios = findViewById(R.id.btnEjercicios);
-        btnResumen = findViewById(R.id.btnResumenSalud);
-        btnRutinas = findViewById(R.id.btnRutinas);
-        btnConfiguracion = findViewById(R.id.btnConfiguracion);
-        btnAIHealth = findViewById(R.id.btnAIHealth);
+        // Configurar clics en las tarjetas de acciones rápidas
+        setupQuickActions();
+        
+        // Configurar clics en las herramientas
+        setupTools();
+        
+        // Configurar clics en entretenimiento
+        setupEntertainment();
+    }
 
-        // Configurar clics
-        btnIMC.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, CalculadoraIMCActivity.class)));
+    private void setupQuickActions() {
+        // IMC
+        MaterialCardView cardIMC = findViewById(R.id.cardIMC);
+        cardIMC.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, CalculadoraIMCActivity.class)));
 
-        btnContadorCalorias.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, ContadorCaloriasActivity.class)));
+        // Calorías
+        MaterialCardView cardCalorias = findViewById(R.id.cardCalorias);
+        cardCalorias.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, ContadorCaloriasActivity.class)));
 
-        btnControlAgua.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, ControlAguaActivity.class)));
+        // Agua
+        MaterialCardView cardAgua = findViewById(R.id.cardAgua);
+        cardAgua.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, ControlAguaActivity.class)));
 
-        btnHistorial.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, HistorialActivity.class)));
+        // Ejercicios
+        MaterialCardView cardEjercicios = findViewById(R.id.cardEjercicios);
+        cardEjercicios.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, EjerciciosActivity.class)));
+    }
 
-        btnEjercicios.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, EjerciciosActivity.class)));
+    private void setupTools() {
+        // Historial
+        MaterialCardView cardHistorial = findViewById(R.id.cardHistorial);
+        cardHistorial.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, HistorialActivity.class)));
 
-        btnResumen.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, ResumenActivity.class)));
+        // Resumen
+        MaterialCardView cardResumen = findViewById(R.id.cardResumen);
+        cardResumen.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, ResumenActivity.class)));
 
-        btnRutinas.setOnClickListener(v -> startActivity(new Intent(this, RutinasActivity.class)));
+        // Rutinas
+        MaterialCardView cardRutinas = findViewById(R.id.cardRutinas);
+        cardRutinas.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, RutinasActivity.class)));
+    }
 
-        btnConfiguracion.setOnClickListener(v -> btnConfiguracion.setEnabled(false)); // Deshabilitado
+    private void setupEntertainment() {
+        // Juego
+        MaterialCardView cardJuego = findViewById(R.id.cardJuego);
+        cardJuego.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, GameActivity.class)));
 
-        btnAIHealth.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, AIHealthActivity.class)));
+        // IA
+        MaterialCardView cardIA = findViewById(R.id.cardIA);
+        cardIA.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, AIHealthActivity.class)));
     }
 }

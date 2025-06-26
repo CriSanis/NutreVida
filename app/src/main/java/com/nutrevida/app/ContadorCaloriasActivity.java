@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import com.google.android.material.card.MaterialCardView;
 
 import com.nutrevida.app.modelos.Alimento;
 import com.nutrevida.app.modelos.ConsumoDiario;
@@ -25,7 +26,7 @@ public class ContadorCaloriasActivity extends AppCompatActivity implements Consu
     private RecyclerView recyclerViewConsumo;
     private ConsumoAdapter adapter;
     private TextView tvTotalCalorias, tvFecha;
-    private LinearLayout layoutSinConsumos;
+    private MaterialCardView layoutSinConsumos;
     private ImageButton btnVolver, btnLimpiarConsumo;
     private Button btnAgregarAlimento;
     private String fechaActual;

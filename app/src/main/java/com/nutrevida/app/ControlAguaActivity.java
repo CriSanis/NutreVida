@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import com.google.android.material.card.MaterialCardView;
 
 import com.nutrevida.app.modelos.RegistroAgua;
 
@@ -25,7 +26,7 @@ public class ControlAguaActivity extends AppCompatActivity implements AguaAdapte
     private AguaAdapter adapter;
     private TextView tvTotalAgua, tvFecha, tvProgreso;
     private ProgressBar progressBarAgua;
-    private LinearLayout layoutSinRegistros;
+    private MaterialCardView layoutSinRegistros;
     private ImageButton btnVolver, btnLimpiarAgua;
     private Button btnAgregar250, btnAgregar500;
     private String fechaActual;
@@ -61,8 +62,8 @@ public class ControlAguaActivity extends AppCompatActivity implements AguaAdapte
         layoutSinRegistros = findViewById(R.id.layoutSinRegistros);
         btnVolver = findViewById(R.id.btnVolver);
         btnLimpiarAgua = findViewById(R.id.btnLimpiarAgua);
-        btnAgregar250 = findViewById(R.id.btnAgregar250);
-        btnAgregar500 = findViewById(R.id.btnAgregar500);
+        btnAgregar250 = findViewById(R.id.btnAgregar250ml);
+        btnAgregar500 = findViewById(R.id.btnAgregar500ml);
         fechaActual = databaseHelper.getCurrentDate();
         tvFecha.setText(fechaActual);
     }

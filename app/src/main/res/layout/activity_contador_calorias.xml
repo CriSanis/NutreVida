@@ -4,129 +4,156 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/background_light">
+    android:background="@drawable/gradient_background"
+    android:animateLayoutChanges="true">
 
-    <!-- Header -->
-    <LinearLayout
+    <!-- Header Mejorado -->
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="16dp"
-        android:gravity="center_vertical"
-        android:background="@color/calorias_color">
+        style="@style/Widget.NutreVida.HeaderCard"
+        android:layout_margin="@dimen/margin_screen"
+        >
 
-        <ImageButton
-            android:id="@+id/btnVolver"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@drawable/button_rounded"
-            android:src="@android:drawable/ic_menu_revert"
-            android:contentDescription="@string/volver"
-            android:backgroundTint="@color/white"
-            android:layout_marginEnd="16dp" />
-
-        <TextView
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/contador_calorias"
-            android:textSize="20sp"
+            android:orientation="horizontal"
+            android:padding="@dimen/header_padding"
+            android:gravity="center_vertical"
+            android:background="@drawable/header_gradient">
+
+            <ImageButton
+                android:id="@+id/btnVolver"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/button_rounded"
+                android:src="@android:drawable/ic_menu_revert"
+                android:contentDescription="@string/volver"
+                android:backgroundTint="@color/text_on_primary"
+                android:layout_marginEnd="16dp"
+                android:alpha="0.9" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="🍎 Contador de Calorías"
+                android:textAppearance="@style/TextAppearance.NutreVida.Headline3"
+                android:textColor="@color/text_on_primary"
+                android:gravity="center" />
+
+            <ImageButton
+                android:id="@+id/btnLimpiarConsumo"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/button_rounded"
+                android:src="@android:drawable/ic_menu_delete"
+                android:contentDescription="@string/limpiar_consumo"
+                android:backgroundTint="@color/text_on_primary"
+                android:layout_marginStart="16dp"
+                android:alpha="0.9" />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Estadísticas Mejoradas -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.NutreVida.ContentCard"
+        android:layout_marginHorizontal="@dimen/margin_screen"
+        android:layout_marginBottom="20dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/card_padding_large">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/total_calorias"
+                    android:textAppearance="@style/TextAppearance.NutreVida.Caption"
+                    android:textColor="@color/text_secondary"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvTotalCalorias"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0 kcal"
+                    android:textAppearance="@style/TextAppearance.NutreVida.Headline2"
+                    android:textColor="@color/calorias_color" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="50dp"
+                android:background="@color/border_light"
+                android:layout_marginHorizontal="20dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fecha_actual"
+                    android:textAppearance="@style/TextAppearance.NutreVida.Caption"
+                    android:textColor="@color/text_secondary"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvFecha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="--/--/----"
+                    android:textAppearance="@style/TextAppearance.NutreVida.Subtitle1"
+                    android:textColor="@color/text_primary" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Botón para agregar alimento mejorado -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.NutreVida.ContentCard"
+        android:layout_marginHorizontal="@dimen/margin_screen"
+        android:layout_marginBottom="20dp"
+        >
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAgregarAlimento"
+            style="@style/Widget.NutreVida.Button.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_margin="16dp"
+            android:background="@drawable/button_primary_gradient"
+            android:text="🍎 Agregar Alimento"
+            android:textColor="@color/text_on_primary"
+            android:textSize="16sp"
             android:textStyle="bold"
-            android:textColor="@color/white"
-            android:gravity="center" />
+             />
 
-        <ImageButton
-            android:id="@+id/btnLimpiarConsumo"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@drawable/button_rounded"
-            android:src="@android:drawable/ic_menu_delete"
-            android:contentDescription="@string/limpiar_consumo"
-            android:backgroundTint="@color/white"
-            android:layout_marginStart="16dp" />
-
-    </LinearLayout>
-
-    <!-- Estadísticas -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="16dp"
-        android:background="@color/white"
-        android:layout_marginBottom="8dp">
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/total_calorias"
-                android:textSize="12sp"
-                android:textColor="@color/text_secondary" />
-
-            <TextView
-                android:id="@+id/tvTotalCalorias"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0 kcal"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:textColor="@color/calorias_color" />
-
-        </LinearLayout>
-
-        <View
-            android:layout_width="1dp"
-            android:layout_height="40dp"
-            android:background="@color/text_secondary"
-            android:layout_marginHorizontal="16dp" />
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/fecha_actual"
-                android:textSize="12sp"
-                android:textColor="@color/text_secondary" />
-
-            <TextView
-                android:id="@+id/tvFecha"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="--/--/----"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="@color/text_primary" />
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <!-- Botón para agregar alimento -->
-    <Button
-        android:id="@+id/btnAgregarAlimento"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:background="@drawable/button_rounded"
-        android:backgroundTint="@color/calorias_color"
-        android:text="@string/agregar_alimento"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:elevation="6dp" />
+    </com.google.android.material.card.MaterialCardView>
 
     <!-- RecyclerView para consumos -->
     <androidx.recyclerview.widget.RecyclerView
@@ -134,45 +161,60 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:padding="16dp"
-        android:clipToPadding="false" />
+        android:paddingHorizontal="@dimen/margin_screen"
+        android:paddingVertical="8dp"
+        android:clipToPadding="false"
+        android:scrollbars="vertical"
+        android:fadeScrollbars="false"
+        android:scrollbarStyle="outsideOverlay" />
 
-    <!-- Layout cuando no hay consumos -->
-    <LinearLayout
+    <!-- Layout cuando no hay consumos mejorado -->
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/layoutSinConsumos"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:padding="32dp"
-        android:visibility="gone">
+        android:layout_margin="@dimen/margin_screen"
+        style="@style/Widget.NutreVida.ContentCard"
+        android:visibility="gone"
+        >
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="🍎"
-            android:textSize="64sp"
-            android:layout_marginBottom="16dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/sin_consumos"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="@color/text_primary"
-            android:layout_marginBottom="8dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/sin_consumos_mensaje"
-            android:textSize="14sp"
-            android:textColor="@color/text_secondary"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
             android:gravity="center"
-            android:lineSpacingExtra="4dp" />
+            android:padding="40dp">
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🍎"
+                android:textSize="80sp"
+                android:layout_marginBottom="24dp"
+                android:alpha="0.8" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sin_consumos"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="16dp"
+                android:letterSpacing="0.02" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sin_consumos_mensaje"
+                android:textSize="16sp"
+                android:textColor="@color/text_secondary"
+                android:gravity="center"
+                android:lineSpacingExtra="6dp"
+                android:letterSpacing="0.01" />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
 </LinearLayout>

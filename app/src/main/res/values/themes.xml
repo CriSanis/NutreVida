@@ -1,9 +1,51 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+    <!-- Tema Base de NutreVida -->
     <style name="Base.Theme.NutreVida" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- Colores Principales -->
+        <item name="colorPrimary">@color/nutrevida_primary</item>
+        <item name="colorPrimaryDark">@color/nutrevida_primary_dark</item>
+        <item name="colorPrimaryVariant">@color/nutrevida_primary_variant</item>
+        <item name="colorOnPrimary">@color/text_on_primary</item>
+        
+        <!-- Colores Secundarios -->
+        <item name="colorSecondary">@color/nutrevida_secondary</item>
+        <item name="colorSecondaryVariant">@color/nutrevida_secondary_dark</item>
+        <item name="colorOnSecondary">@color/text_on_primary</item>
+        
+        <!-- Colores de Acento -->
+        <item name="colorAccent">@color/nutrevida_accent</item>
+        
+        <!-- Colores de Estado -->
+        <item name="colorError">@color/nutrevida_error</item>
+        <item name="colorOnError">@color/text_on_primary</item>
+        
+        <!-- Colores de Fondo -->
+        <item name="android:windowBackground">@drawable/gradient_background</item>
+        <item name="colorSurface">@color/background_card</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        
+        <!-- Colores de Texto -->
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+        
+        <!-- Configuración de Ventana -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        
+        <!-- Configuración de Material Design -->
+        <item name="materialButtonStyle">@style/Widget.NutreVida.Button</item>
+        <item name="cardViewStyle">@style/Widget.NutreVida.CardView</item>
+        <item name="textInputStyle">@style/Widget.NutreVida.TextInputLayout</item>
     </style>
 
+    <!-- Tema Principal de la Aplicación -->
     <style name="Theme.NutreVida" parent="Base.Theme.NutreVida" />
+    
+    <!-- Tema para Splash Screen -->
+    <style name="Theme.NutreVida.Splash" parent="Base.Theme.NutreVida">
+        <item name="android:windowBackground">@drawable/gradient_background</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
 </resources>

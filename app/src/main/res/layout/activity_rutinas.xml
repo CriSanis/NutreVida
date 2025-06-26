@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/gradient_background"
-    android:padding="16dp">
+    android:padding="@dimen/margin_screen">
 
     <!-- ScrollView para permitir desplazamiento -->
     <ScrollView
@@ -24,7 +24,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:padding="12dp"
+                android:padding="@dimen/header_padding"
                 android:gravity="center_vertical"
                 android:background="@color/rutina_color">
 
@@ -35,7 +35,7 @@
                     android:background="@drawable/button_rounded"
                     android:src="@android:drawable/ic_menu_revert"
                     android:contentDescription="@string/volver"
-                    android:backgroundTint="@color/white"
+                    android:backgroundTint="@color/text_on_primary"
                     android:layout_marginEnd="8dp" />
 
                 <TextView
@@ -43,9 +43,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="📅 Planificar Rutinas"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/white"
+                    android:textAppearance="@style/TextAppearance.NutreVida.Subtitle1"
+                    android:textColor="@color/text_on_primary"
                     android:gravity="center" />
             </LinearLayout>
 
@@ -54,15 +53,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="6dp">
+                style="@style/Widget.NutreVida.ContentCard">
 
                 <CalendarView
                     android:id="@+id/calendarView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="16dp"
-                    android:background="@color/white" />
+                    android:layout_margin="@dimen/card_padding"
+                    android:background="@color/surface_color" />
             </androidx.cardview.widget.CardView>
 
             <!-- Input Alimentos -->
@@ -70,23 +68,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="6dp">
+                style="@style/Widget.NutreVida.ContentCard">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="16dp"
-                    android:background="@color/white">
+                    android:padding="@dimen/card_padding"
+                    android:background="@color/surface_color">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="🍎 Agregar Alimento"
-                        android:textSize="14sp"
-                        android:textStyle="bold"
+                        android:textAppearance="@style/TextAppearance.NutreVida.Caption"
                         android:textColor="@color/text_primary"
+                        android:textStyle="bold"
                         android:layout_marginBottom="8dp" />
 
                     <EditText
@@ -94,11 +91,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Ej: Quinua, Papa"
-                        android:textSize="14sp"
-                        android:padding="12dp"
+                        android:textAppearance="@style/TextAppearance.NutreVida.Body2"
+                        android:padding="@dimen/input_padding"
                         android:background="@drawable/edit_text_rounded"
                         android:minHeight="48dp"
                         android:inputType="text"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_secondary"
                         android:enabled="true" />
 
                     <Button
@@ -110,8 +109,8 @@
                         android:background="@drawable/button_rounded"
                         android:backgroundTint="@color/calorias_color"
                         android:text="➕ Añadir"
-                        android:textColor="@color/white"
-                        android:textSize="14sp"
+                        android:textColor="@color/text_on_primary"
+                        android:textAppearance="@style/TextAppearance.NutreVida.Body2"
                         android:textStyle="bold"
                         android:paddingHorizontal="24dp"
                         android:elevation="4dp"
@@ -126,23 +125,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="6dp">
+                style="@style/Widget.NutreVida.ContentCard">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="16dp"
-                    android:background="@color/white">
+                    android:padding="@dimen/card_padding"
+                    android:background="@color/surface_color">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="💪 Agregar Ejercicio"
-                        android:textSize="14sp"
-                        android:textStyle="bold"
+                        android:textAppearance="@style/TextAppearance.NutreVida.Caption"
                         android:textColor="@color/text_primary"
+                        android:textStyle="bold"
                         android:layout_marginBottom="8dp" />
 
                     <EditText
@@ -150,11 +148,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Ej: Correr, Yoga"
-                        android:textSize="14sp"
-                        android:padding="12dp"
+                        android:textAppearance="@style/TextAppearance.NutreVida.Body2"
+                        android:padding="@dimen/input_padding"
                         android:background="@drawable/edit_text_rounded"
                         android:minHeight="48dp"
                         android:inputType="text"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_secondary"
                         android:enabled="true" />
 
                     <Button
@@ -166,8 +166,8 @@
                         android:background="@drawable/button_rounded"
                         android:backgroundTint="@color/exercise_color"
                         android:text="➕ Añadir"
-                        android:textColor="@color/white"
-                        android:textSize="14sp"
+                        android:textColor="@color/text_on_primary"
+                        android:textAppearance="@style/TextAppearance.NutreVida.Body2"
                         android:textStyle="bold"
                         android:paddingHorizontal="24dp"
                         android:elevation="4dp"
@@ -182,15 +182,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="6dp">
+                style="@style/Widget.NutreVida.ContentCard">
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rvRutinas"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="16dp"
-                    android:background="@color/white" />
+                    android:padding="@dimen/card_padding"
+                    android:background="@color/surface_color" />
             </androidx.cardview.widget.CardView>
         </LinearLayout>
     </ScrollView>

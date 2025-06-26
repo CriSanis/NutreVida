@@ -4,15 +4,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="8dp"
-    app:cardCornerRadius="8dp"
-    app:cardElevation="4dp">
+    android:layout_marginBottom="12dp"
+    style="@style/Widget.NutreVida.SectionCard"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="16dp">
+        android:padding="@dimen/card_padding"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📊"
+            android:textSize="24sp"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.8" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -20,56 +29,83 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:id="@+id/tvIMC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0.0"
+                    android:textAppearance="@style/TextAppearance.NutreVida.Subtitle1"
+                    android:textColor="@color/nutrevida_primary"
+                    android:layout_marginEnd="12dp" />
+
+                <TextView
+                    android:id="@+id/tvCategoria"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Categoría"
+                    android:textAppearance="@style/TextAppearance.NutreVida.Body2"
+                    android:textColor="@color/text_secondary"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
             <TextView
                 android:id="@+id/tvFecha"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="YYYY-MM-DD"
-                android:textSize="14sp"
-                android:textColor="@color/text_secondary" />
-
-            <TextView
-                android:id="@+id/tvIMC"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0.0"
-                android:textSize="16sp"
+                android:textAppearance="@style/TextAppearance.NutreVida.Body2"
+                android:textColor="@color/text_secondary"
                 android:textStyle="bold"
-                android:textColor="@color/text_primary" />
+                android:layout_marginBottom="8dp" />
 
-            <TextView
-                android:id="@+id/tvCategoria"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Categoría"
-                android:textSize="14sp"
-                android:textColor="@color/text_secondary" />
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
 
-            <TextView
-                android:id="@+id/tvPeso"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0.0 kg"
-                android:textSize="14sp"
-                android:textColor="@color/text_secondary" />
+                <TextView
+                    android:id="@+id/tvPeso"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0.0 kg"
+                    android:textAppearance="@style/TextAppearance.NutreVida.Caption"
+                    android:textColor="@color/text_secondary"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="16dp" />
 
-            <TextView
-                android:id="@+id/tvAltura"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0.0 cm"
-                android:textSize="14sp"
-                android:textColor="@color/text_secondary" />
+                <TextView
+                    android:id="@+id/tvAltura"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0.0 cm"
+                    android:textAppearance="@style/TextAppearance.NutreVida.Caption"
+                    android:textColor="@color/text_secondary"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
         <ImageButton
             android:id="@+id/btnEliminar"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@null"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/button_rounded"
+            android:backgroundTint="@color/nutrevida_error"
             android:src="@android:drawable/ic_menu_delete"
-            android:contentDescription="@string/eliminar" />
+            android:contentDescription="@string/eliminar"
+            android:padding="12dp"
+            android:alpha="0.9"
+             />
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>

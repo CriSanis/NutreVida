@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Las dimensiones son las mismas en modo nocturno, pero se pueden personalizar si es necesario -->
+    <!-- Se heredan del archivo principal de dimensiones -->
+</resources> 

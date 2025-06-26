@@ -10,6 +10,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import com.google.android.material.card.MaterialCardView;
 import com.nutrevida.app.modelos.RegistroIMC; // Explicit import
 import java.util.List;
 
@@ -19,7 +20,7 @@ public class HistorialActivity extends AppCompatActivity implements HistorialAda
     private RecyclerView recyclerViewHistorial;
     private HistorialAdapter adapter;
     private TextView tvTotalRegistros, tvUltimoIMC;
-    private LinearLayout layoutSinRegistros;
+    private MaterialCardView layoutSinRegistros;
     private ImageButton btnVolver, btnLimpiarHistorial;
 
     @Override

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    
+    <gradient
+        android:type="linear"
+        android:angle="90"
+        android:startColor="@color/nutrevida_primary"
+        android:centerColor="@color/nutrevida_secondary"
+        android:endColor="@color/nutrevida_accent" />
+    
+    <corners android:radius="16dp" />
+    
+    <stroke
+        android:width="0dp"
+        android:color="@android:color/transparent" />
+    
+</shape> 

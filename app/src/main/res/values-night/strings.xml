@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Los strings son los mismos en modo nocturno, pero se pueden personalizar si es necesario -->
+    <string name="app_name">NUTREVIDA</string>
+    <string name="app_tagline">Tu compañero de vida saludable</string>
+</resources> 

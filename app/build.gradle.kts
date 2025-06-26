@@ -48,6 +48,10 @@ dependencies {
     implementation(libs.generativeai)
     implementation(libs.guava.android)
     implementation("org.commonmark:commonmark:0.22.0")
+
+    // NUEVA DEPENDENCIA para GridLayout
+    implementation("androidx.gridlayout:gridlayout:1.0.0")
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    android:fillViewport="true"
+    android:animateLayoutChanges="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/margin_screen"
+        android:paddingVertical="24dp">
+
+        <!-- Header Mejorado -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.NutreVida.HeaderCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="@dimen/card_padding_large"
+                android:background="@drawable/header_gradient">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🎮"
+                    android:textSize="48sp"
+                    android:layout_marginBottom="12dp"
+                    android:alpha="0.95" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PUZZLE BLOCKS"
+                    android:textAppearance="@style/TextAppearance.NutreVida.Headline1"
+                    android:textColor="@color/text_on_primary"
+                    android:layout_marginBottom="8dp"
+                    android:shadowColor="@color/overlay_dark"
+                    android:shadowDx="2"
+                    android:shadowDy="2"
+                    android:shadowRadius="4" />
+
+                <TextView
+                    android:id="@+id/scoreText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Puntuación: 0"
+                    android:textAppearance="@style/TextAppearance.NutreVida.Subtitle1"
+                    android:textColor="@color/text_on_primary"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Game Board Card Mejorado -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.NutreVida.ContentCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/card_padding"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🎯 Tablero de Juego"
+                    android:textAppearance="@style/TextAppearance.NutreVida.Subtitle1"
+                    android:textColor="@color/primary_color"
+                    android:layout_marginBottom="20dp" />
+
+                <androidx.gridlayout.widget.GridLayout
+                    android:id="@+id/gameGrid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/game_grid_background"
+                    android:padding="12dp"
+                    app:columnCount="10"
+                    app:rowCount="10" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Pieces Preview Card Mejorado -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.NutreVida.ContentCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/card_padding">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🧩 Piezas Disponibles"
+                    android:textAppearance="@style/TextAppearance.NutreVida.Subtitle1"
+                    android:textColor="@color/primary_color"
+                    android:layout_marginBottom="16dp"
+                    android:layout_gravity="center" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Toca una pieza para seleccionarla, luego toca el tablero para colocarla"
+                    android:textAppearance="@style/TextAppearance.NutreVida.Body2"
+                    android:textColor="@color/text_secondary"
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:lineSpacingExtra="2dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:weightSum="3">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="12dp"
+                        android:background="@drawable/section_background"
+                        android:layout_marginEnd="8dp"
+                        app:cornerRadius="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pieza 1"
+                            android:textAppearance="@style/TextAppearance.NutreVida.Caption"
+                            android:textColor="@color/text_primary"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="12dp" />
+
+                        <androidx.gridlayout.widget.GridLayout
+                            android:id="@+id/previewGrid1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/preview_grid_background"
+                            android:padding="6dp"
+                            app:columnCount="4"
+                            app:rowCount="4" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="12dp"
+                        android:background="@drawable/section_background"
+                        android:layout_marginHorizontal="4dp"
+                        app:cornerRadius="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pieza 2"
+                            android:textAppearance="@style/TextAppearance.NutreVida.Caption"
+                            android:textColor="@color/text_primary"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="12dp" />
+
+                        <androidx.gridlayout.widget.GridLayout
+                            android:id="@+id/previewGrid2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/preview_grid_background"
+                            android:padding="6dp"
+                            app:columnCount="4"
+                            app:rowCount="4" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="12dp"
+                        android:background="@drawable/section_background"
+                        android:layout_marginStart="8dp"
+                        app:cornerRadius="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pieza 3"
+                            android:textAppearance="@style/TextAppearance.NutreVida.Caption"
+                            android:textColor="@color/text_primary"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="12dp" />
+
+                        <androidx.gridlayout.widget.GridLayout
+                            android:id="@+id/previewGrid3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/preview_grid_background"
+                            android:padding="6dp"
+                            app:columnCount="4"
+                            app:rowCount="4" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Controls Card Mejorado -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.NutreVida.ContentCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/card_padding">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🎮 Controles"
+                    android:textAppearance="@style/TextAppearance.NutreVida.Subtitle1"
+                    android:textColor="@color/primary_color"
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/resetButton"
+                    style="@style/Widget.NutreVida.Button.Primary"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    app:backgroundTint="@null"
+                    android:background="@drawable/button_gradient_entertainment"
+                    android:text="🔄 Reiniciar Juego"
+                    android:textColor="@color/white"
+                    android:textAppearance="@style/TextAppearance.NutreVida.Body1"
+                    android:textStyle="bold"
+                    app:cornerRadius="16dp"
+                    
+                    android:elevation="6dp" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Instructions Card Mejorado -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.NutreVida.ContentCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/card_padding">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📖 Instrucciones"
+                    android:textAppearance="@style/TextAppearance.NutreVida.Subtitle1"
+                    android:textColor="@color/primary_color"
+                    android:layout_marginBottom="16dp"
+                    android:layout_gravity="center" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="• Selecciona una pieza tocándola\n• Coloca la pieza en el tablero tocando donde quieras ponerla\n• Completa filas o columnas enteras para ganar puntos\n• El juego termina cuando no puedas colocar más piezas"
+                    android:textAppearance="@style/TextAppearance.NutreVida.Body2"
+                    android:textColor="@color/text_secondary"
+                    android:lineSpacingExtra="6dp" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</ScrollView>

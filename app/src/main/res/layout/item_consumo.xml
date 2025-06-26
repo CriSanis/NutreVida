@@ -4,15 +4,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="8dp"
-    app:cardCornerRadius="8dp"
-    app:cardElevation="4dp">
+    android:layout_marginBottom="12dp"
+    style="@style/Widget.NutreVida.SectionCard"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="16dp">
+        android:padding="@dimen/card_padding"
+        android:gravity="center_vertical">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -25,35 +26,50 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Nombre alimento"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="@color/text_primary" />
+                android:textAppearance="@style/TextAppearance.NutreVida.Subtitle2"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="8dp" />
 
-            <TextView
-                android:id="@+id/tvCantidad"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0 g"
-                android:textSize="14sp"
-                android:textColor="@color/text_secondary" />
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
 
-            <TextView
-                android:id="@+id/tvCalorias"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0 kcal"
-                android:textSize="14sp"
-                android:textColor="@color/calorias_color" />
+                <TextView
+                    android:id="@+id/tvCantidad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0 g"
+                    android:textAppearance="@style/TextAppearance.NutreVida.Body2"
+                    android:textColor="@color/text_secondary"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="16dp" />
+
+                <TextView
+                    android:id="@+id/tvCalorias"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0 kcal"
+                    android:textAppearance="@style/TextAppearance.NutreVida.Body1"
+                    android:textColor="@color/calorias_color"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
         <ImageButton
             android:id="@+id/btnEliminar"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@null"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/button_rounded"
+            android:backgroundTint="@color/nutrevida_error"
             android:src="@android:drawable/ic_menu_delete"
-            android:contentDescription="@string/eliminar" />
+            android:contentDescription="@string/eliminar"
+            android:padding="12dp"
+            android:alpha="0.9"
+             />
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>

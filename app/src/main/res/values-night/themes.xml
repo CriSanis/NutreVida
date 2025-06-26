@@ -1,17 +1,51 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Theme.NUTREVIDA" parent="Theme.Material3.DayNight">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/light_green</item>
-        <item name="colorPrimaryVariant">@color/primary_green</item>
-        <item name="colorOnPrimary">@color/black</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/primary_green</item>
-        <item name="colorSecondaryVariant">@color/dark_green</item>
-        <item name="colorOnSecondary">@color/white</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor">@color/primary_green</item>
-        <!-- Customize your theme here. -->
-        <item name="android:windowBackground">#121212</item>
+    <!-- Tema Base de NutreVida - Modo Nocturno -->
+    <style name="Base.Theme.NutreVida" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Colores Principales - Versión Nocturna -->
+        <item name="colorPrimary">@color/nutrevida_primary_light</item>
+        <item name="colorPrimaryDark">@color/nutrevida_primary</item>
+        <item name="colorPrimaryVariant">@color/nutrevida_secondary</item>
+        <item name="colorOnPrimary">@color/text_primary</item>
+        
+        <!-- Colores Secundarios - Versión Nocturna -->
+        <item name="colorSecondary">@color/nutrevida_secondary_light</item>
+        <item name="colorSecondaryVariant">@color/nutrevida_secondary</item>
+        <item name="colorOnSecondary">@color/text_primary</item>
+        
+        <!-- Colores de Acento -->
+        <item name="colorAccent">@color/nutrevida_accent_light</item>
+        
+        <!-- Colores de Estado -->
+        <item name="colorError">@color/nutrevida_error</item>
+        <item name="colorOnError">@color/text_on_primary</item>
+        
+        <!-- Colores de Fondo - Modo Nocturno -->
+        <item name="android:windowBackground">@drawable/gradient_background_dark</item>
+        <item name="colorSurface">@color/background_card_dark</item>
+        <item name="colorOnSurface">@color/text_white</item>
+        
+        <!-- Colores de Texto - Modo Nocturno -->
+        <item name="android:textColorPrimary">@color/text_white</item>
+        <item name="android:textColorSecondary">@color/text_secondary_light</item>
+        
+        <!-- Configuración de Ventana -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        
+        <!-- Configuración de Material Design -->
+        <item name="materialButtonStyle">@style/Widget.NutreVida.Button</item>
+        <item name="cardViewStyle">@style/Widget.NutreVida.CardView</item>
+        <item name="textInputStyle">@style/Widget.NutreVida.TextInputLayout</item>
+    </style>
+
+    <!-- Tema Principal de la Aplicación - Modo Nocturno -->
+    <style name="Theme.NutreVida" parent="Base.Theme.NutreVida" />
+    
+    <!-- Tema para Splash Screen - Modo Nocturno -->
+    <style name="Theme.NutreVida.Splash" parent="Base.Theme.NutreVida">
+        <item name="android:windowBackground">@color/background_dark</item>
+        <item name="android:windowFullscreen">true</item>
     </style>
 </resources>

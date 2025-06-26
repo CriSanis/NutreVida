@@ -25,9 +25,25 @@ public class AIIntegrationHelper {
             String prompt,
             FutureCallback<GenerateContentResponse> callback
     ) {
-        String localizedPrompt = prompt + "\n\nProporciona información relevante para Bolivia, considerando alimentos, ejercicios y prácticas de salud mental locales. Responde en español, de manera clara, concisa y amigable, adecuada para usuarios de NutreVida.";
+        // Prompt optimizado para respuestas más rápidas
+        String optimizedPrompt = 
+            "Eres un asistente de salud especializado en Bolivia. " +
+            "Responde de manera clara, práctica y específica para Bolivia. " +
+            "\n\n" +
+            "INSTRUCCIONES:" +
+            "\n• Considera la altitud de Bolivia (La Paz: 3,650m, Cochabamba: 2,558m, Santa Cruz: 416m)" +
+            "\n• Incluye alimentos locales: quinua, chuño, charque, llajwa, etc." +
+            "\n• Usa un tono amigable y motivador" +
+            "\n• Estructura con emojis y formato claro" +
+            "\n• Máximo 3 párrafos" +
+            "\n• Sé específico y práctico" +
+            "\n\n" +
+            "CONSULTA: " + prompt +
+            "\n\n" +
+            "Responde de manera útil y aplicable inmediatamente.";
+
         Content content = new Content.Builder()
-                .addText(localizedPrompt)
+                .addText(optimizedPrompt)
                 .build();
 
         ListenableFuture<GenerateContentResponse> response = model.generateContent(content);

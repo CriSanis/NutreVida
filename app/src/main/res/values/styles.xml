@@ -1,0 +1,345 @@
+<resources>
+
+    <!-- Estilo Base de la App -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary_color</item>
+        <item name="colorPrimaryDark">@color/primary_dark_color</item>
+        <item name="colorAccent">@color/accent_color</item>
+        <item name="android:windowBackground">@drawable/gradient_background</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <!-- Estilos de Botones -->
+    <style name="ButtonPrimary">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:elevation">6dp</item>
+    </style>
+
+    <style name="ButtonSecondary">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:textColor">@color/primary_color</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:gravity">center</item>
+        <item name="android:elevation">2dp</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <!-- Estilos de Texto -->
+    <style name="TitleLarge">
+        <item name="android:textSize">32sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/primary_color</item>
+        <item name="android:letterSpacing">0.1</item>
+    </style>
+
+    <style name="TitleMedium">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/primary_color</item>
+        <item name="android:letterSpacing">0.05</item>
+    </style>
+
+    <style name="SectionTitle">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="BodyText">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:lineSpacingExtra">2dp</item>
+    </style>
+
+    <style name="CaptionText">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/text_secondary</item>
+    </style>
+
+    <!-- Estilos de CardView -->
+    <style name="CardPrimary">
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">8dp</item>
+        <item name="cardUseCompatPadding">true</item>
+        <item name="cardBackgroundColor">@color/white</item>
+    </style>
+
+    <style name="CardSecondary">
+        <item name="cardCornerRadius">12dp</item>
+        <item name="cardElevation">4dp</item>
+        <item name="cardUseCompatPadding">true</item>
+        <item name="cardBackgroundColor">@color/card_background</item>
+    </style>
+
+    <style name="CardButton">
+        <item name="cardCornerRadius">12dp</item>
+        <item name="cardElevation">6dp</item>
+        <item name="cardUseCompatPadding">true</item>
+        <item name="cardBackgroundColor">@android:color/transparent</item>
+    </style>
+
+    <!-- Estilos de Contenedores -->
+    <style name="SectionContainer">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@color/card_background</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:layout_marginBottom">16dp</item>
+        <item name="android:elevation">2dp</item>
+    </style>
+
+    <!-- ===== ESTILOS DE WIDGETS MATERIAL DESIGN ===== -->
+    
+    <!-- Estilo de Botón Principal -->
+    <style name="Widget.NutreVida.Button" parent="Widget.NutreVida">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">64dp</item>
+        <item name="android:textColor">@color/text_on_primary</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="cornerRadius">16dp</item>
+        <item name="elevation">6dp</item>
+    </style>
+
+    <!-- Estilo de Botón Outlined -->
+    <style name="Widget.NutreVida.Button.Outlined" parent="Widget.NutreVida">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:textColor">@color/nutrevida_primary</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="cornerRadius">12dp</item>
+        <item name="strokeColor">@color/nutrevida_primary</item>
+        <item name="elevation">2dp</item>
+    </style>
+
+    <!-- Estilo de CardView -->
+    <style name="Widget.NutreVida.CardView" parent="Widget.NutreVida">
+        <item name="cardCornerRadius">20dp</item>
+        <item name="cardElevation">10dp</item>
+        <item name="cardUseCompatPadding">true</item>
+        <item name="cardBackgroundColor">@color/background_card</item>
+    </style>
+
+    <!-- Estilo de TextInputLayout -->
+    <style name="Widget.NutreVida.TextInputLayout" parent="Widget.NutreVida">
+        <item name="boxCornerRadiusTopStart">12dp</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+        <item name="boxStrokeColor">@color/nutrevida_primary</item>
+        <item name="hintTextColor">@color/nutrevida_primary</item>
+    </style>
+
+    <!-- ===== ESTILOS DE TEXTO ===== -->
+    
+    <!-- Títulos -->
+    <style name="TextAppearance.NutreVida.Headline1" parent="TextAppearance.NutreVida">
+        <item name="android:textSize">32sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/nutrevida_primary</item>
+        <item name="android:letterSpacing">0.08</item>
+    </style>
+
+    <style name="TextAppearance.NutreVida.Headline2" parent="TextAppearance.NutreVida">
+        <item name="android:textSize">28sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/nutrevida_primary</item>
+        <item name="android:letterSpacing">0.06</item>
+    </style>
+
+    <style name="TextAppearance.NutreVida.Headline3" parent="TextAppearance.NutreVida">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:letterSpacing">0.04</item>
+    </style>
+
+    <!-- Subtítulos -->
+    <style name="TextAppearance.NutreVida.Subtitle1" parent="TextAppearance.NutreVida">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:letterSpacing">0.03</item>
+    </style>
+
+    <style name="TextAppearance.NutreVida.Subtitle2" parent="TextAppearance.NutreVida">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <!-- Cuerpo de Texto -->
+    <style name="TextAppearance.NutreVida.Body1" parent="TextAppearance.NutreVida">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:lineSpacingExtra">4dp</item>
+    </style>
+
+    <style name="TextAppearance.NutreVida.Body2" parent="TextAppearance.NutreVida">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:lineSpacingExtra">2dp</item>
+    </style>
+
+    <!-- Caption -->
+    <style name="TextAppearance.NutreVida.Caption" parent="TextAppearance.NutreVida">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <!-- ===== ESTILOS DE COMPONENTES ===== -->
+    
+    <!-- Header Card -->
+    <style name="Widget.NutreVida.HeaderCard" parent="Widget.NutreVida.CardView">
+        <item name="cardCornerRadius">24dp</item>
+        <item name="cardElevation">12dp</item>
+        <item name="cardBackgroundColor">@color/background_card</item>
+    </style>
+
+    <!-- Content Card -->
+    <style name="Widget.NutreVida.ContentCard" parent="Widget.NutreVida.CardView">
+        <item name="cardCornerRadius">20dp</item>
+        <item name="cardElevation">10dp</item>
+        <item name="cardBackgroundColor">@color/background_card</item>
+    </style>
+
+    <!-- Section Card -->
+    <style name="Widget.NutreVida.SectionCard" parent="Widget.NutreVida.CardView">
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">6dp</item>
+        <item name="cardBackgroundColor">@color/background_secondary</item>
+    </style>
+
+    <!-- ===== ESTILOS DE BOTONES ESPECÍFICOS ===== -->
+    
+    <!-- Botón de Acción Principal -->
+    <style name="Widget.NutreVida.Button.Primary" parent="Widget.NutreVida.Button">
+        <item name="backgroundTint">@color/nutrevida_primary</item>
+    </style>
+
+    <!-- Botón de Acción Secundaria -->
+    <style name="Widget.NutreVida.Button.Secondary" parent="Widget.NutreVida.Button">
+        <item name="backgroundTint">@color/nutrevida_secondary</item>
+    </style>
+
+    <!-- Botón de Acento -->
+    <style name="Widget.NutreVida.Button.Accent" parent="Widget.NutreVida.Button">
+        <item name="backgroundTint">@color/nutrevida_accent</item>
+    </style>
+
+    <!-- Botón de Error -->
+    <style name="Widget.NutreVida.Button.Error" parent="Widget.NutreVida.Button">
+        <item name="backgroundTint">@color/nutrevida_error</item>
+    </style>
+
+    <!-- ===== ESTILOS DE LAYOUT ===== -->
+    
+    <!-- Contenedor de Sección -->
+    <style name="Layout.NutreVida.Section" parent="Layout.NutreVida">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">20dp</item>
+        <item name="android:layout_marginBottom">20dp</item>
+    </style>
+
+    <!-- Contenedor de Header -->
+    <style name="Layout.NutreVida.Header" parent="Layout.NutreVida">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:padding">20dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@drawable/header_gradient</item>
+    </style>
+
+    <!-- ===== ESTILOS DE ESTADO ===== -->
+    
+    <!-- Estado de Éxito -->
+    <style name="State.NutreVida.Success" parent="State.NutreVida">
+        <item name="android:textColor">@color/nutrevida_success</item>
+        <item name="android:backgroundTint">@color/nutrevida_success</item>
+    </style>
+
+    <!-- Estado de Advertencia -->
+    <style name="State.NutreVida.Warning" parent="State.NutreVida">
+        <item name="android:textColor">@color/nutrevida_warning</item>
+        <item name="android:backgroundTint">@color/nutrevida_warning</item>
+    </style>
+
+    <!-- Estado de Error -->
+    <style name="State.NutreVida.Error" parent="State.NutreVida">
+        <item name="android:textColor">@color/nutrevida_error</item>
+        <item name="android:backgroundTint">@color/nutrevida_error</item>
+    </style>
+
+    <!-- Estado de Información -->
+    <style name="State.NutreVida.Info" parent="State.NutreVida">
+        <item name="android:textColor">@color/nutrevida_info</item>
+        <item name="android:backgroundTint">@color/nutrevida_info</item>
+    </style>
+
+    <!-- ===== ESTILOS BASE ===== -->
+    
+    <!-- Estilo base para TextAppearance -->
+    <style name="TextAppearance">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!-- Estilo base para Widget -->
+    <style name="Widget">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!-- Estilo base para Layout -->
+    <style name="Layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!-- Estilo base para State -->
+    <style name="State">
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <!-- Estilo base para TextAppearance.NutreVida -->
+    <style name="TextAppearance.NutreVida" parent="TextAppearance">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!-- Estilo base para Widget.NutreVida -->
+    <style name="Widget.NutreVida" parent="Widget">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!-- Estilo base para Layout.NutreVida -->
+    <style name="Layout.NutreVida" parent="Layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!-- Estilo base para State.NutreVida -->
+    <style name="State.NutreVida" parent="State">
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+</resources>

@@ -3,24 +3,24 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:padding="8dp"
-    android:background="@color/card_background">
+    android:padding="@dimen/spacing_small"
+    android:background="@color/background_card">
 
     <TextView
         android:id="@+id/tvTipo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:textSize="14sp"
-        android:textStyle="bold"
+        android:textAppearance="@style/TextAppearance.NutreVida.Body2"
         android:textColor="@color/text_primary"
-        android:paddingEnd="8dp" />
+        android:textStyle="bold"
+        android:paddingEnd="@dimen/spacing_small" />
 
     <TextView
         android:id="@+id/tvDescripcion"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="2"
-        android:textSize="14sp"
+        android:textAppearance="@style/TextAppearance.NutreVida.Body2"
         android:textColor="@color/text_primary" />
 </LinearLayout>

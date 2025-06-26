@@ -7,108 +7,191 @@
     android:background="@drawable/gradient_background"
     android:padding="16dp">
 
-    <!-- Header -->
+    <!-- Header Simple -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="12dp"
+        android:padding="16dp"
         android:gravity="center_vertical"
-        android:background="@color/success_color">
+        android:background="@color/success_color"
+        android:layout_marginBottom="16dp">
 
         <ImageButton
             android:id="@+id/btnBack"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:background="@drawable/button_rounded"
             android:src="@android:drawable/ic_menu_revert"
             android:contentDescription="@string/volver"
-            android:backgroundTint="@color/white"
-            android:layout_marginEnd="8dp" />
+            android:backgroundTint="@color/text_on_primary"
+            android:layout_marginEnd="16dp" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="🤖 Asistente de Salud"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="@color/white"
+            android:text="🤖 Asistente de Salud IA"
+            android:textAppearance="@style/TextAppearance.NutreVida.Subtitle1"
+            android:textColor="@color/text_on_primary"
             android:gravity="center" />
+
     </LinearLayout>
 
-    <!-- Input -->
+    <!-- Campo de Entrada -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:cardCornerRadius="12dp"
-        app:cardElevation="6dp">
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        app:cardUseCompatPadding="true"
+        android:backgroundTint="@color/white">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp"
-            android:background="@color/white">
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="💭 ¿En qué puedo ayudarte?"
+                android:textAppearance="@style/TextAppearance.NutreVida.Subtitle1"
+                android:textColor="@color/text_primary"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp" />
 
             <EditText
                 android:id="@+id/etPrompt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Ej: ¿Qué ejercicios son buenos para mí en La Paz?"
-                android:textSize="14sp"
-                android:padding="12dp"
-                android:background="@drawable/edit_text_rounded"
-                android:minHeight="100dp"
+                android:hint="Ej: Necesito una rutina de ejercicios para principiantes en La Paz, Bolivia"
+                android:inputType="textMultiLine|textCapSentences"
+                android:minLines="3"
+                android:maxLines="6"
+                android:textSize="16sp"
+                android:padding="16dp"
                 android:gravity="top"
-                android:inputType="textMultiLine"
-                android:enabled="true" />
+                android:background="@drawable/edit_text_rounded"
+                android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_secondary"
+                android:layout_marginBottom="16dp" />
 
             <Button
                 android:id="@+id/btnSubmit"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/button_rounded"
-                android:backgroundTint="@color/primary_color"
-                android:text="🌟 Consultar"
-                android:textColor="@color/white"
-                android:textSize="14sp"
+                android:layout_height="56dp"
+                android:background="@drawable/button_primary_gradient"
+                android:text="🌟 Consultar IA"
+                android:textColor="@color/text_on_primary"
+                android:textSize="16sp"
                 android:textStyle="bold"
-                android:elevation="4dp"
-                android:enabled="true"
-                android:clickable="true"
-                android:focusable="true" />
+                android:elevation="4dp" />
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <!-- Response -->
+    <!-- Respuesta -->
     <androidx.cardview.widget.CardView
         android:id="@+id/cardResponse"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:visibility="gone"
-        app:cardCornerRadius="12dp"
-        app:cardElevation="6dp">
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        app:cardUseCompatPadding="true"
+        android:backgroundTint="@color/white">
 
-        <ScrollView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fillViewport="true">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="20dp">
 
-            <TextView
-                android:id="@+id/tvResponse"
+            <!-- Header de Respuesta -->
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:text="⌛ Cargando respuesta..."
-                android:textSize="14sp"
-                android:textColor="@color/text_primary"
-                android:background="@color/white"
-                android:autoLink="web"
-                android:linksClickable="true" />
-        </ScrollView>
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🤖"
+                    android:textSize="24sp"
+                    android:layout_marginEnd="12dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Respuesta de la IA"
+                    android:textAppearance="@style/TextAppearance.NutreVida.Subtitle1"
+                    android:textColor="@color/text_primary"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- Animación de Carga -->
+            <LinearLayout
+                android:id="@+id/loadingLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="32dp">
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:indeterminateTint="@color/nutrevida_primary"
+                    android:layout_marginBottom="16dp" />
+
+                <TextView
+                    android:id="@+id/tvLoadingText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🤔 Pensando..."
+                    android:textAppearance="@style/TextAppearance.NutreVida.Body1"
+                    android:textColor="@color/text_secondary"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- Contenido de la Respuesta con Scroll Mejorado -->
+            <ScrollView
+                android:id="@+id/responseScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                android:visibility="gone"
+                android:scrollbars="vertical"
+                android:fadeScrollbars="false"
+                android:scrollbarStyle="outsideOverlay"
+                android:overScrollMode="ifContentScrolls"
+                android:smoothScrollbar="true">
+
+                <TextView
+                    android:id="@+id/tvResponse"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textAppearance="@style/TextAppearance.NutreVida.Body2"
+                    android:textColor="@color/text_primary"
+                    android:lineSpacingExtra="6dp"
+                    android:autoLink="web"
+                    android:linksClickable="true"
+                    android:padding="8dp" />
+
+            </ScrollView>
+
+        </LinearLayout>
     </androidx.cardview.widget.CardView>
+
 </LinearLayout>

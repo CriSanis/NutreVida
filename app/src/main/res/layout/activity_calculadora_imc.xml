@@ -4,90 +4,93 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F5"
+    android:background="@drawable/gradient_background"
+    android:animateLayoutChanges="true"
     tools:context=".CalculadoraIMCActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:paddingHorizontal="@dimen/margin_screen"
+        android:paddingVertical="24dp">
 
-        <!-- Header -->
-        <LinearLayout
+        <!-- Header Mejorado -->
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@drawable/header_background"
-            android:padding="20dp"
-            android:layout_marginBottom="24dp">
+            style="@style/Widget.NutreVida.HeaderCard"
+            android:layout_marginBottom="24dp"
+            >
 
-            <TextView
-                android:id="@+id/btnVolver"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="← "
-                android:textSize="24sp"
-                android:textColor="#FFFFFF"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:padding="8dp"
-                android:clickable="true"
-                android:focusable="true" />
+                android:orientation="horizontal"
+                android:background="@drawable/header_gradient"
+                android:padding="24dp"
+                android:gravity="center_vertical">
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Calculadora de IMC"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:textColor="#FFFFFF"
-                android:gravity="center"
-                android:fontFamily="sans-serif-medium" />
+                <ImageButton
+                    android:id="@+id/btnVolver"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/button_rounded"
+                    android:src="@android:drawable/ic_menu_revert"
+                    android:contentDescription="@string/volver"
+                    android:backgroundTint="@color/text_on_primary"
+                    android:layout_marginEnd="16dp"
+                    android:alpha="0.9" />
 
-            <View
-                android:layout_width="40dp"
-                android:layout_height="40dp" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="📊 Calculadora de IMC"
+                    android:textAppearance="@style/TextAppearance.NutreVida.Headline3"
+                    android:textColor="@color/text_on_primary"
+                    android:gravity="center" />
 
-        </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-        <!-- Formulario -->
-        <androidx.cardview.widget.CardView
+        <!-- Formulario Mejorado -->
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="4dp">
+            android:layout_marginBottom="24dp"
+            style="@style/Widget.NutreVida.ContentCard"
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="24dp">
+                android:padding="@dimen/card_padding_large">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Ingresa tus datos"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:textColor="#333333"
-                    android:layout_marginBottom="20dp" />
+                    android:text="📝 Ingresa tus datos"
+                    android:textAppearance="@style/TextAppearance.NutreVida.Subtitle1"
+                    android:textColor="@color/text_primary"
+                    android:layout_marginBottom="24dp" />
 
                 <!-- Peso -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Peso (kg)"
-                    android:textSize="16sp"
-                    android:textColor="#333333"
-                    android:layout_marginBottom="8dp" />
+                    android:text="⚖️ Peso (kg)"
+                    android:textAppearance="@style/TextAppearance.NutreVida.Body1"
+                    android:textColor="@color/text_primary"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="12dp" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
+                    android:layout_marginBottom="20dp"
+                    style="@style/Widget.NutreVida.TextInputLayout">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etPeso"
@@ -95,7 +98,8 @@
                         android:layout_height="wrap_content"
                         android:hint="Ej: 70.5"
                         android:inputType="numberDecimal"
-                        android:textSize="16sp" />
+                        android:textSize="16sp"
+                        android:padding="@dimen/input_padding" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -103,16 +107,17 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Altura (cm)"
-                    android:textSize="16sp"
-                    android:textColor="#333333"
-                    android:layout_marginBottom="8dp" />
+                    android:text="📏 Altura (cm)"
+                    android:textAppearance="@style/TextAppearance.NutreVida.Body1"
+                    android:textColor="@color/text_primary"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="12dp" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="24dp"
-                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
+                    android:layout_marginBottom="28dp"
+                    style="@style/Widget.NutreVida.TextInputLayout">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etAltura"
@@ -120,74 +125,75 @@
                         android:layout_height="wrap_content"
                         android:hint="Ej: 175"
                         android:inputType="numberDecimal"
-                        android:textSize="16sp" />
+                        android:textSize="16sp"
+                        android:padding="@dimen/input_padding" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <!-- Botón Calcular -->
+                <!-- Botón Calcular Mejorado -->
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnCalcular"
+                    style="@style/Widget.NutreVida.Button.Primary"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:text="CALCULAR IMC"
+                    android:layout_height="64dp"
+                    android:text="🧮 CALCULAR IMC"
+                    android:textColor="@color/text_on_primary"
                     android:textSize="16sp"
                     android:textStyle="bold"
-                    app:backgroundTint="@color/primary_green"
-                    app:cornerRadius="8dp"
-                    android:textColor="@color/white" />
+                    android:background="@drawable/button_primary_gradient"
+                     />
 
             </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
-        <!-- Resultado -->
-        <androidx.cardview.widget.CardView
+        <!-- Resultado Mejorado -->
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardResultado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="24dp"
             android:visibility="gone"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="4dp">
+            style="@style/Widget.NutreVida.ContentCard"
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="24dp">
+                android:padding="@dimen/card_padding_large">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Tu Resultado"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:textColor="#333333"
-                    android:layout_marginBottom="16dp" />
+                    android:text="🎯 Tu Resultado"
+                    android:textAppearance="@style/TextAppearance.NutreVida.Subtitle1"
+                    android:textColor="@color/text_primary"
+                    android:layout_marginBottom="20dp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:gravity="center_vertical"
-                    android:layout_marginBottom="16dp">
+                    android:layout_marginBottom="20dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="IMC: "
-                        android:textSize="18sp"
-                        android:textColor="#666666" />
+                        android:textAppearance="@style/TextAppearance.NutreVida.Body1"
+                        android:textColor="@color/text_secondary"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/tvResultadoIMC"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="25.2"
-                        android:textSize="32sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/primary_green"
-                        android:layout_marginStart="8dp" />
+                        android:textAppearance="@style/TextAppearance.NutreVida.Headline2"
+                        android:textColor="@color/nutrevida_primary"
+                        android:layout_marginStart="12dp" />
 
                 </LinearLayout>
 
@@ -196,69 +202,76 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Peso Normal"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/primary_green"
-                    android:background="@drawable/categoria_background"
+                    android:textAppearance="@style/TextAppearance.NutreVida.Body1"
+                    android:textColor="@color/text_on_primary"
+                    android:background="@drawable/button_primary_gradient"
                     android:gravity="center"
-                    android:padding="12dp"
-                    android:layout_marginBottom="16dp" />
+                    android:padding="16dp"
+                    android:layout_marginBottom="20dp"
+                    android:letterSpacing="0.02" />
 
                 <TextView
                     android:id="@+id/tvRecomendacion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="¡Excelente! Tu peso está dentro del rango saludable. Mantén una dieta equilibrada y ejercicio regular."
-                    android:textSize="14sp"
-                    android:textColor="#666666"
-                    android:lineSpacingExtra="4dp" />
+                    android:textAppearance="@style/TextAppearance.NutreVida.Body1"
+                    android:textColor="@color/text_secondary"
+                    android:lineSpacingExtra="6dp"
+                    android:letterSpacing="0.01" />
 
             </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
-        <!-- Información adicional -->
-        <androidx.cardview.widget.CardView
+        <!-- Información adicional Mejorada -->
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="4dp">
+            app:cardCornerRadius="20dp"
+            app:cardElevation="10dp"
+            android:backgroundTint="@color/white"
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="20dp">
+                android:padding="24dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Rangos de IMC"
+                    android:text="📊 Rangos de IMC"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    android:textColor="#333333"
-                    android:layout_marginBottom="16dp" />
+                    android:textColor="@color/text_primary"
+                    android:layout_marginBottom="20dp"
+                    android:letterSpacing="0.02" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:layout_marginBottom="8dp">
+                    android:layout_marginBottom="12dp"
+                    android:gravity="center_vertical">
 
                     <View
-                        android:layout_width="16dp"
-                        android:layout_height="16dp"
-                        android:background="#2196F3"
-                        android:layout_marginEnd="12dp"
-                        android:layout_marginTop="2dp" />
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@color/imc_bajo_peso"
+                        android:layout_marginEnd="16dp"
+                        app:cornerRadius="10dp" />
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Bajo peso: Menor a 18.5"
-                        android:textSize="14sp"
-                        android:textColor="#666666" />
+                        android:textSize="15sp"
+                        android:textColor="@color/text_secondary"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.01" />
 
                 </LinearLayout>
 
@@ -266,22 +279,25 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:layout_marginBottom="8dp">
+                    android:layout_marginBottom="12dp"
+                    android:gravity="center_vertical">
 
                     <View
-                        android:layout_width="16dp"
-                        android:layout_height="16dp"
-                        android:background="#4CAF50"
-                        android:layout_marginEnd="12dp"
-                        android:layout_marginTop="2dp" />
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@color/imc_normal"
+                        android:layout_marginEnd="16dp"
+                        app:cornerRadius="10dp" />
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Normal: 18.5 - 24.9"
-                        android:textSize="14sp"
-                        android:textColor="#666666" />
+                        android:textSize="15sp"
+                        android:textColor="@color/text_secondary"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.01" />
 
                 </LinearLayout>
 
@@ -289,50 +305,56 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:layout_marginBottom="8dp">
+                    android:layout_marginBottom="12dp"
+                    android:gravity="center_vertical">
 
                     <View
-                        android:layout_width="16dp"
-                        android:layout_height="16dp"
-                        android:background="#FF9800"
-                        android:layout_marginEnd="12dp"
-                        android:layout_marginTop="2dp" />
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@color/imc_sobrepeso"
+                        android:layout_marginEnd="16dp"
+                        app:cornerRadius="10dp" />
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Sobrepeso: 25.0 - 29.9"
-                        android:textSize="14sp"
-                        android:textColor="#666666" />
+                        android:textSize="15sp"
+                        android:textColor="@color/text_secondary"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.01" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
 
                     <View
-                        android:layout_width="16dp"
-                        android:layout_height="16dp"
-                        android:background="#F44336"
-                        android:layout_marginEnd="12dp"
-                        android:layout_marginTop="2dp" />
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@color/imc_obesidad"
+                        android:layout_marginEnd="16dp"
+                        app:cornerRadius="10dp" />
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Obesidad: 30.0 o mayor"
-                        android:textSize="14sp"
-                        android:textColor="#666666" />
+                        android:textSize="15sp"
+                        android:textColor="@color/text_secondary"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.01" />
 
                 </LinearLayout>
 
             </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
     </LinearLayout>
 

@@ -2,20 +2,20 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_light">
+    android:background="@drawable/gradient_background">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="@dimen/margin_screen">
 
         <!-- Header -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:padding="8dp"
+            android:padding="@dimen/header_padding"
             android:gravity="center_vertical"
             android:background="@color/calorias_color">
 
@@ -26,7 +26,7 @@
                 android:background="@drawable/button_rounded"
                 android:src="@android:drawable/ic_menu_revert"
                 android:contentDescription="@string/volver"
-                android:backgroundTint="@color/white"
+                android:backgroundTint="@color/text_on_primary"
                 android:layout_marginEnd="16dp" />
 
             <TextView
@@ -34,9 +34,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/agregar_alimento"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="@color/white"
+                android:textAppearance="@style/TextAppearance.NutreVida.Headline3"
+                android:textColor="@color/text_on_primary"
                 android:gravity="center" />
 
         </LinearLayout>
@@ -46,16 +45,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/seleccionar_alimento"
-            android:textSize="16sp"
-            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.NutreVida.Subtitle1"
             android:textColor="@color/text_primary"
+            android:textStyle="bold"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="8dp" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/nombre_alimento">
+            android:hint="@string/nombre_alimento"
+            style="@style/Widget.NutreVida.TextInputLayout">
 
             <AutoCompleteTextView
                 android:id="@+id/autoCompleteAlimentos"
@@ -67,17 +67,18 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.NutreVida.TextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/cantidad_gramos"
-            android:layout_marginTop="8dp">
+            android:layout_marginBottom="20dp"
+            android:hint="Cantidad (gramos)">
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etCantidad"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                android:imeOptions="actionDone" />
+                android:inputType="number"
+                android:maxLines="1" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -86,11 +87,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:background="@drawable/button_rounded"
-            android:backgroundTint="@color/calorias_color"
+            android:background="@drawable/button_primary_gradient"
             android:text="@string/agregar_consumo"
-            android:textColor="@color/white"
-            android:textSize="16sp"
+            android:textColor="@color/text_on_primary"
+            android:textAppearance="@style/TextAppearance.NutreVida.Body1"
             android:textStyle="bold"
             android:elevation="6dp" />
 
@@ -99,83 +99,89 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/agregar_nuevo_alimento"
-            android:textSize="16sp"
-            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.NutreVida.Subtitle1"
             android:textColor="@color/text_primary"
+            android:textStyle="bold"
             android:layout_marginTop="24dp"
             android:layout_marginBottom="8dp" />
 
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.NutreVida.TextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/nombre">
+            android:layout_marginBottom="16dp"
+            android:hint="Nombre del alimento">
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etNombre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
-                android:imeOptions="actionNext" />
+                android:maxLines="1" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.NutreVida.TextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/calorias_por_100g"
-            android:layout_marginTop="8dp">
+            android:layout_marginBottom="16dp"
+            android:hint="Calorías (por 100g)">
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etCalorias"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                android:imeOptions="actionNext" />
+                android:inputType="number"
+                android:maxLines="1" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.NutreVida.TextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/proteinas_por_100g"
-            android:layout_marginTop="8dp">
+            android:layout_marginBottom="16dp"
+            android:hint="Proteínas (por 100g)">
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etProteinas"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"
-                android:imeOptions="actionNext" />
+                android:maxLines="1" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.NutreVida.TextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/carbohidratos_por_100g"
-            android:layout_marginTop="8dp">
+            android:layout_marginBottom="16dp"
+            android:hint="Carbohidratos (por 100g)">
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etCarbohidratos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"
-                android:imeOptions="actionNext" />
+                android:maxLines="1" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.NutreVida.TextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/grasas_por_100g"
-            android:layout_marginTop="8dp">
+            android:layout_marginBottom="16dp"
+            android:hint="Grasas (por 100g)">
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etGrasas"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"
-                android:imeOptions="actionDone" />
+                android:maxLines="1" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -184,11 +190,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:background="@drawable/button_rounded"
-            android:backgroundTint="@color/calorias_color"
+            android:background="@drawable/button_primary_gradient"
             android:text="@string/agregar_nuevo_alimento"
-            android:textColor="@color/white"
-            android:textSize="16sp"
+            android:textColor="@color/text_on_primary"
+            android:textAppearance="@style/TextAppearance.NutreVida.Body1"
             android:textStyle="bold"
             android:elevation="6dp" />
 

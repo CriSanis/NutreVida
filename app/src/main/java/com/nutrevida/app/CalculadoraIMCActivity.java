@@ -1,13 +1,14 @@
 package com.nutrevida.app;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.textfield.TextInputEditText;
 import java.text.DecimalFormat;
 
@@ -15,8 +16,9 @@ public class CalculadoraIMCActivity extends AppCompatActivity {
 
     private TextInputEditText etPeso, etAltura;
     private MaterialButton btnCalcular;
-    private TextView btnVolver, tvResultadoIMC, tvCategoria, tvRecomendacion;
-    private CardView cardResultado;
+    private ImageButton btnVolver;
+    private TextView tvResultadoIMC, tvCategoria, tvRecomendacion;
+    private MaterialCardView cardResultado;
     private DecimalFormat df = new DecimalFormat("#.##");
     private DatabaseHelper databaseHelper;
 

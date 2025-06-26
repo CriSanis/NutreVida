@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Los estilos del modo nocturno heredan del archivo principal -->
+    <!-- Solo se personalizan los colores específicos del tema oscuro -->
+</resources> 

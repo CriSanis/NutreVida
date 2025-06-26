@@ -13,7 +13,7 @@
         android:background="@color/success_color"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:padding="16dp">
+        android:padding="@dimen/header_padding">
 
         <ImageButton
             android:id="@+id/btnVolver"
@@ -21,7 +21,7 @@
             android:layout_height="40dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/button_rounded"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="@color/text_on_primary"
             android:contentDescription="@string/volver"
             android:src="@android:drawable/ic_menu_revert" />
 
@@ -31,9 +31,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="Resumen de Salud"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textAppearance="@style/TextAppearance.NutreVida.Headline3"
+            android:textColor="@color/text_on_primary" />
     </LinearLayout>
 
     <!-- Fecha -->
@@ -45,24 +44,23 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:text="YYYY-MM-DD"
-        android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textAppearance="@style/TextAppearance.NutreVida.Subtitle1"
+        android:textColor="@color/text_on_primary"
         android:textStyle="bold" />
 
     <!-- Tarjeta de resumen -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:cardCornerRadius="12dp"
-        app:cardElevation="6dp">
+        android:layout_margin="@dimen/margin_screen"
+        style="@style/Widget.NutreVida.ContentCard">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
+            android:background="@color/surface_color"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="@dimen/card_padding">
 
             <!-- IMC -->
             <LinearLayout
@@ -76,8 +74,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="📊 IMC"
+                    android:textAppearance="@style/TextAppearance.NutreVida.Body1"
                     android:textColor="@color/text_primary"
-                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -85,8 +83,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="IMC: No registrado"
-                    android:textColor="@color/text_secondary"
-                    android:textSize="16sp" />
+                    android:textAppearance="@style/TextAppearance.NutreVida.Body1"
+                    android:textColor="@color/text_secondary" />
             </LinearLayout>
 
             <!-- Calorías consumidas -->
@@ -101,8 +99,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="🍎 Calorías consumidas"
+                    android:textAppearance="@style/TextAppearance.NutreVida.Body1"
                     android:textColor="@color/text_primary"
-                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -110,8 +108,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0 kcal"
-                    android:textColor="@color/text_secondary"
-                    android:textSize="16sp" />
+                    android:textAppearance="@style/TextAppearance.NutreVida.Body1"
+                    android:textColor="@color/text_secondary" />
             </LinearLayout>
 
             <!-- Agua consumida -->
@@ -126,8 +124,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="💧 Agua consumida"
+                    android:textAppearance="@style/TextAppearance.NutreVida.Body1"
                     android:textColor="@color/text_primary"
-                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -135,8 +133,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0 L"
-                    android:textColor="@color/text_secondary"
-                    android:textSize="16sp" />
+                    android:textAppearance="@style/TextAppearance.NutreVida.Body1"
+                    android:textColor="@color/text_secondary" />
             </LinearLayout>
 
             <!-- Calorías quemadas -->
@@ -150,8 +148,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="💪 Calorías quemadas"
+                    android:textAppearance="@style/TextAppearance.NutreVida.Body1"
                     android:textColor="@color/text_primary"
-                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -159,8 +157,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0 kcal"
-                    android:textColor="@color/text_secondary"
-                    android:textSize="16sp" />
+                    android:textAppearance="@style/TextAppearance.NutreVida.Body1"
+                    android:textColor="@color/text_secondary" />
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>

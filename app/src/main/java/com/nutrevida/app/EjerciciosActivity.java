@@ -14,6 +14,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import com.google.android.material.card.MaterialCardView;
 
 import com.nutrevida.app.modelos.Ejercicio;
 
@@ -25,7 +26,7 @@ public class EjerciciosActivity extends AppCompatActivity implements EjercicioAd
     private RecyclerView recyclerViewEjercicios;
     private EjercicioAdapter adapter;
     private TextView tvTotalCalorias, tvFecha;
-    private LinearLayout layoutSinEjercicios;
+    private MaterialCardView layoutSinEjercicios;
     private ImageButton btnVolver, btnLimpiarEjercicios;
     private Button btnAgregarEjercicio;
     private String fechaActual;

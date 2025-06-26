@@ -14,19 +14,3 @@
         android:topRightRadius="24dp" />
     
 </shape>
-        android:centerColor="@color/nutrevida_secondary"
-        android:endColor="@color/nutrevida_accent" />
-    
-    <corners
-        android:topLeftRadius="24dp"
-        android:topRightRadius="24dp" />
-    
-</shape>
-        android:centerColor="@color/nutrevida_secondary"
-        android:endColor="@color/nutrevida_accent" />
-    
-    <corners
-        android:topLeftRadius="24dp"
-        android:topRightRadius="24dp" />
-    
-</shape>

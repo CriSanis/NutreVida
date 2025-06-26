@@ -96,8 +96,6 @@
                         android:background="@drawable/edit_text_rounded"
                         android:minHeight="48dp"
                         android:inputType="text"
-                        android:textColor="@color/text_primary"
-                        android:textColorHint="@color/text_secondary"
                         android:enabled="true" />
 
                     <Button
@@ -153,8 +151,6 @@
                         android:background="@drawable/edit_text_rounded"
                         android:minHeight="48dp"
                         android:inputType="text"
-                        android:textColor="@color/text_primary"
-                        android:textColorHint="@color/text_secondary"
                         android:enabled="true" />
 
                     <Button

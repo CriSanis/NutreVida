@@ -15,21 +15,3 @@
         android:color="@android:color/transparent" />
     
 </shape>
-        android:endColor="@color/nutrevida_secondary" />
-    
-    <corners android:radius="16dp" />
-    
-    <stroke
-        android:width="0dp"
-        android:color="@android:color/transparent" />
-    
-</shape>
-        android:endColor="@color/nutrevida_secondary" />
-    
-    <corners android:radius="16dp" />
-    
-    <stroke
-        android:width="0dp"
-        android:color="@android:color/transparent" />
-    
-</shape>
